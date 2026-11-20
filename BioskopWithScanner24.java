@@ -21,7 +21,6 @@ public class BioskopWithScanner24 {
                     System.out.print("Masukkan nama: ");
                     nama = sc.nextLine();
 
-                    // Validasi rentang (no 3) dan kursi terisi (no 4)
                     while (true) {
                         System.out.print("Masukkan baris: ");
                         baris = sc.nextInt();
@@ -56,7 +55,12 @@ public class BioskopWithScanner24 {
                 }
             } else if (menu == 2) {
                 for (int i = 0; i < penonton.length; i++) {
-                    System.out.println("Baris ke-" + (i + 1) + ": " + String.join(", ", penonton[i]));
+                    System.out.println("Baris ke-" + (i + 1) + ": ");
+                    for (int j = 0; j < penonton[i].length; j++) {
+                        String isi = (penonton[i][j] == null) ? "***" : penonton[i][j];
+                        System.out.print(isi + "\t");
+                    }
+                    System.out.println();
                 }
             } else if (menu == 3) {
                 System.out.println("Terima kasih.");
