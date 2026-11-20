@@ -21,6 +21,7 @@ public class BioskopWithScanner24 {
                     System.out.print("Masukkan nama: ");
                     nama = sc.nextLine();
 
+                    // Validasi rentang (no 3) dan kursi terisi (no 4)
                     while (true) {
                         System.out.print("Masukkan baris: ");
                         baris = sc.nextInt();
@@ -34,6 +35,14 @@ public class BioskopWithScanner24 {
                                     + ", kolom 1-" + penonton[0].length);
                             continue;
                         }
+
+                        if (penonton[baris - 1][kolom - 1] != null) {
+                            System.out.println("Kursi sudah terisi oleh "
+                                    + penonton[baris - 1][kolom - 1]
+                                    + ". Pilih kursi lain.");
+                            continue;
+                        }
+
                         break;
                     }
 
@@ -55,6 +64,7 @@ public class BioskopWithScanner24 {
             } else {
                 System.out.println("Menu tidak tersedia!");
             }
-                    }
     }
+    sc.close();
 }
+} 
